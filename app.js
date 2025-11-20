@@ -53,10 +53,5 @@ app.use((err, req, res, next) => {
 const server = app.listen(port, () => {
   console.log(`Launching server on http://localhost:${port}`);
 });
- 
-// Manejo adecuado del cierre del servidor
-process.on('SIGTERM', () => {
-  server.close(() => {
-    console.log('Process terminated');
-  });
-});
+
+module.exports = server; 
